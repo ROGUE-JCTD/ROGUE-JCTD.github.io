@@ -108,7 +108,23 @@ We've also augmented GeoNode so that it works with GeoGit.
 </ul>
 
 <h4>For Developers</h4>
-<p>Chef and Vagrant can be used to build ROGUE virtual machines from scratch and the repositories are in the ROGUE JCTD GitHub as well.  Documentation for these will be forthcoming.
+<p> Although all of the components used for the ROGUE-JCTD are open source and available for free on the internet, downloading, installing and configuring all of the components is a significant undertaking.
+      We recommend using Chef, Vagrant and VirtualBox to automatically install and configure the ROGUE components.  Follow the steps below to stand up your own ROGUE instance.
+<br/><br/>
+<b style="font-weight:600;">Note:</b> Make sure you are using Ruby 1.9.3+ before starting.
+<ol>
+    <li>Install <a href="https://www.virtualbox.org/wiki/Downloads" target="_new">VirtualBox</a></li>
+    <li>Install <a href="http://www.vagrantup.com/downloads.html" target="_new">Vagrant 1.3.5+</a></li>
+</ol>
+<pre><code>$ gem install berkshelf
+$ vagrant plugin install vagrant-berkshelf
+$ git clone https://github.com/ROGUE-JCTD/rogue-chef-repo.git
+$ cd rogue-chef-repo
+$ nano Vagrantfile  # modify the Vagrantfile based on your network configuration.
+$ berks install
+$ vagrant up
+</code></pre>
+
 </p>
 
 <h3><a name="contact-us" class="anchor" href="#contact-us"></a>Contact Us</h3>
