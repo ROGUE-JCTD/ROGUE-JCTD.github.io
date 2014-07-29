@@ -528,3 +528,7 @@ Small Device Styles
   }
 
 }
+
+.bold {
+    font-weight:600;
+}

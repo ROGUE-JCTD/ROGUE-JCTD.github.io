@@ -101,21 +101,23 @@ We've also augmented GeoNode so that it works with GeoGit.
 
 <h4>For Developers<a name="rogue-for-devs" class="anchor" href="#rogue-for-devs"></a></h4>
 <p>All of the components used for GeoSHAPE are open source and available for free on the internet.  We have developed a build process to create virtual machines.
-      We recommend using Chef, Vagrant and VirtualBox to automatically install and configure the ROGUE components.  Follow the steps below to stand up your own GeoSHAPE instance.
+      We recommend using Chef, Vagrant and VirtualBox to automatically install and configure the GeoSHAPE components.  Follow the steps below to stand up your own GeoSHAPE instance.
 <br/><br/>
-<b style="font-weight:600;">Note:</b> Make sure you are using Ruby 1.9.3+ before starting.
+<span class="bold">Note:</span> Make sure you are using Ruby 1.9.3+ before starting.
 <ol>
     <li>Install <a href="https://www.virtualbox.org/wiki/Downloads" target="_new">VirtualBox</a></li>
-    <li>Install <a href="http://www.vagrantup.com/downloads.html" target="_new">Vagrant 1.3.5+</a></li>
+    <li>Install <a href="http://www.vagrantup.com/downloads.html" target="_new">Vagrant 1.6.3+</a></li>
 </ol>
-<pre><code>$ gem install berkshelf
-$ vagrant plugin install vagrant-berkshelf
-$ git clone https://github.com/ROGUE-JCTD/rogue-chef-repo.git
+
+<pre><code>$ git clone https://github.com/ROGUE-JCTD/rogue-chef-repo.git
 $ cd rogue-chef-repo
-$ nano Vagrantfile  # modify the Vagrantfile based on your network configuration.
-$ berks install
-$ vagrant up
-</code></pre>
+$ vagrant up</code></pre>
+
+<div>
+    <br/>
+    <span class="bold">Note:</span> The default Vagrant configuration assumes many things about your set up, for example that you want to bridge through an ethernet connection.
+    You should modify the Vagrantfile to work in your environment.
+</div>
 
 </p>
 
